@@ -195,6 +195,10 @@ PROJECTS
 
 */
 
+.none {
+  cursor: no-drop;
+}
+
 .section__title {
   text-align: center;
   font-size: 48px;
@@ -265,4 +269,18 @@ PROJECTS
   color: white;
   font-size: 20px;
   margin-right: 16px;
+}
+
+/* 
+
+FOOTER
+
+*/
+
+footer {
+  background-color: rgb(245, 245, 245);
+}
+
+.footer__img {
+  width: 100%;
 }
