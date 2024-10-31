@@ -12,6 +12,17 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="./index.js"></script>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+        emailjs.init({
+          publicKey: "k9XMqnY1N3Y2DCILB",
+           });
+       })();
+    </script>
   </head>
   <body>
     <section id="landing-page">
@@ -85,7 +96,7 @@
           ></a>
         </div>
       </header>
-      <button class="mail__btn click">
+      <button class="mail__btn click" onclick="toggleModal()">
         <i class="fa-solid fa-envelope"></i>
       </button>
       <a href="#projects" class="scroll">
@@ -134,25 +145,28 @@
           <h4 class="modal__sub-title modal__sub-title--contact">
             I'm currently open to new opportunities.
           </h4>
-          <form id="contact__form" action="">
+          <form id="contact__form" onsubmit="contact(event)">
             <div class="form__item">
-              <label class="form__item--label">Name</label>
-              <input type="text" name="user_name" class="input" required ></input>
+              <label class="form__item--label"><span class="color__text">* </span>Name</label>
+              <input type="text" name="user_name" class="input" required></input>
             </div>
-          </form>
-          <form id="contact__form" action="">
             <div class="form__item">
-              <label class="form__item--label">Email</label>
-              <input type="email" name="user_email" class="input" required ></input>
+              <label class="form__item--label"><span class="color__text">* </span>Email</label>
+              <input type="email" name="user_email" class="input"  required></input>
             </div>
-          </form>
-          <form id="contact__form" action="">
             <div class="form__item">
-              <label class="form__item--label">Massage</label>
+              <label class="form__item--label"><span class="color__text">* </span>Massage</label>
               <textarea type="text" name="message" class="input" required></textarea>
             </div>
             <button id="contact__submit" class="form__submit">Send it my way</button>
           </form>
+          <div class="modal__overlay modal__overlay--loading">
+            <i class="fa-solid fa-spinner"></i>
+          </div>
+          <div class="modal__overlay modal__overlay--success">
+            Thanks for the message! Hope to speak with you soon.
+          </div>
+          <i class="fa-solid fa-x modal__exit click"></i>
         </div>
       </div>
     </section>
