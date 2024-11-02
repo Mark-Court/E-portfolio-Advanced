@@ -25,7 +25,7 @@
     </script>
   </head>
   <body>
-    <section id="landing-page">
+    <section id="landing-page" onmousemove="moveBackground(event)">
       <nav>
         <figure>
           <img
@@ -40,12 +40,13 @@
               <a
                 href="#"
                 class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                onclick="toggleModal()"
                 >About</a
               >
             </li>
             <li class="nav__link">
               <a
-                href="#"
+                href="#projects"
                 class="nav__link--anchor link__hover-effect link__hover-effect--black"
                 >Projects</a
               >
@@ -54,6 +55,7 @@
               <a
                 href="#"
                 class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                onclick="toggleModal()"
                 >Contact</a
               >
             </li>
@@ -61,7 +63,7 @@
               <a
                 href="#"
                 class="nav__link--anchor link__hover-effect link__hover-effect--black"
-                ><i class="fa-solid fa-circle-half-stroke"></i
+                ><i class="fa-solid fa-circle-half-stroke" onclick="toggleContrast()"></i
               ></a>
             </li>
           </ul>
@@ -69,14 +71,14 @@
       </nav>
       <header class="main__header">
         <h1 class="title">Hey</h1>
-        <h1 class="title title__secondary">I'm Mark.</h1>
+        <h1 class="title color__text">I'm Mark.</h1>
         <p class="header__para">
           I'm a
-          <span class="color__text">Junior Frontend Software Engineer</span>
+          <b class="color__text">Junior Frontend Software Engineer</b>
           with a strong passion for building web applications with great user
           experinces.
           <br />
-          Here's a bit more <span class="color__text">about me.</span>
+          Here's a bit more <b class="color__text click" onclick="toggleModal()">about me.</b>
         </p>
         <div class="social__list">
           <a
@@ -147,15 +149,15 @@
           </h4>
           <form id="contact__form" onsubmit="contact(event)">
             <div class="form__item">
-              <label class="form__item--label"><span class="color__text">* </span>Name</label>
+              <label class="form__item--label"><b class="color__text">* </b>Name</label>
               <input type="text" name="user_name" class="input" required></input>
             </div>
             <div class="form__item">
-              <label class="form__item--label"><span class="color__text">* </span>Email</label>
+              <label class="form__item--label"><b class="color__text">* </b>Email</label>
               <input type="email" name="user_email" class="input"  required></input>
             </div>
             <div class="form__item">
-              <label class="form__item--label"><span class="color__text">* </span>Massage</label>
+              <label class="form__item--label"><b class="color__text">* </b>Massage</label>
               <textarea type="text" name="message" class="input" required></textarea>
             </div>
             <button id="contact__submit" class="form__submit">Send it my way</button>
@@ -166,15 +168,24 @@
           <div class="modal__overlay modal__overlay--success">
             Thanks for the message! Hope to speak with you soon.
           </div>
-          <i class="fa-solid fa-x modal__exit click"></i>
+          <i class="fa-solid fa-x modal__exit click" onclick="toggleModal()"></i>
         </div>
       </div>
+      <img src="./assets/circle.svg" class="shape shape--0">
+      <img src="./assets/semi circle.svg" class="shape shape--1">
+      <img src="./assets/squiggly.svg" class="shape shape--2">
+      <img src="./assets/triangle.svg" class="shape shape--3">
+      <img src="./assets/semi circle.svg" class="shape shape--4">
+      <img src="./assets/circle.svg" class="shape shape--5">
+      <img src="./assets/circle.svg" class="shape shape--6">
+      <img src="./assets/squiggly.svg" class="shape shape--7">
+      <img src="./assets/triangle.svg" class="shape shape--8">
     </section>
     <section id="projects">
       <div class="container">
         <div class="row">
           <h1 class="section__title">
-            Here are some of my <span class="color__text">projects</span>
+            Here are some of my <b class="color__text">projects</b>
           </h1>
           <ul class="projects__list">
             <div class="project__wrapper">
@@ -304,6 +315,7 @@
             <a
               href=""
               class="footer__social--link link__hover-effect link__hover-effect--white"
+              onclick="toggleModal()"
               >Contact</a
             >
             <a
