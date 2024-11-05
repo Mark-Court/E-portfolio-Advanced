@@ -260,6 +260,10 @@ header {
   max-width: 1000px;
 }
 
+.main__header {
+  padding: 0 20px;
+}
+
 .color__text {
   color: #dd3939 !important;
 }
@@ -652,4 +656,39 @@ SHAPES
 .shape--8 {
   top: 80vh;
   left: 80vw;
+  
+}
+
+/* 
+
+PHONES
+
+*/
+
+@media (max-width: 768px) {
+  .main__header {
+    padding: 0 20px;
+  }
+
+  .row {
+    padding: 0 20px;
+  }
+
+  .modal__half {
+    padding: 40px 55px;
+  }
+
+  .modal__language {
+    padding: 8px;
+  }
+
+  .mail__btn {
+    z-index: 25;
+  }
+}
+
+@media (max-width: 992px) {
+  .main__header {
+    padding: 0 20px;
+  }
 }
